@@ -8,12 +8,12 @@ import io
 app = Flask(__name__)
 
 # Load the trained model
-model = load_model('model.h5')
+# model = load_model('model.h5')
 
 @app.route('/predict', methods=['POST'])
 def predict():
     # Receive image from Flutter app
-    image_file = request.files['image']
+    # image_file = request.files['image']
     
     # Read and preprocess the image
     # img = Image.open(io.BytesIO(image_file.read()))
