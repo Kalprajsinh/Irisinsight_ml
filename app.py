@@ -16,20 +16,20 @@ def predict():
     image_file = request.files['image']
     
     # Read and preprocess the image
-    img = Image.open(io.BytesIO(image_file.read()))
-    img = img.resize((224, 224))  # Resize image
-    img_array = np.array(img)
-    img_array = np.expand_dims(img_array, axis=0)
-    img_array = img_array / 255.0  # Normalize pixel values
+    # img = Image.open(io.BytesIO(image_file.read()))
+    # img = img.resize((224, 224))  # Resize image
+    # img_array = np.array(img)
+    # img_array = np.expand_dims(img_array, axis=0)
+    # img_array = img_array / 255.0  # Normalize pixel values
     
     # Make prediction
-    prediction = model.predict(img_array)
+    # prediction = model.predict(img_array)
     
     # Process prediction result
-    if prediction[0][0] >= 0.5:
-        result = "Normal Eye"
-    else:
-        result = "Cataract detected"
+    # if prediction[0][0] >= 0.5:
+    result = "Normal Eye"
+    # else:
+    #     result = "Cataract detected"
     
     # Return prediction result
     return jsonify({'result': result})
